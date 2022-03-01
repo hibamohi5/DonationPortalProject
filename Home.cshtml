@@ -1,0 +1,37 @@
+@* Add the nav bar here *@
+@* ViewBag.Organizations *@
+@* ViewBag.User *@
+
+<h2>Hello, @ViewBag.User.Name</h2>
+
+
+<form action="/newPost" method="get">
+    <button class="btn btn-outline-info btn-lg">Add Fundraiser</button>
+</form>
+
+<div>
+    @foreach (var post in ViewBag.Organizations)
+    {
+        <div class="d-flex">
+            @* post.image.. *@
+            @* <img src="{SOME LINK}" alt=""> *@
+            <div class= "col">
+            <img style= "max-width:100%;" src="@post.ImageUrl" alt="@post.ImageUrl">
+            </div>
+            <div class= "col">
+                <h2>About the Organization: @post.OrganizationDescription</h2>
+                <p>About the Fundraiser: @post.PostDescription</p>
+            </div>
+            <div class="col">
+                <p>Fundraiser Goal: @post.Goal</p>
+                <p>Amount collected so far: @post.AmountCollected</p>
+                <form action="/viewPost/@post.OrganizationId" method="get">
+                    <button class="btn btn-primary btn-lg">View</button>
+                </form>
+                <form action="/pledge/@post.OrganizationId" method="get">
+                    <button class="btn btn-success btn-lg">Donate</button>
+                </form>
+            </div>
+        </div>
+    }
+</div>

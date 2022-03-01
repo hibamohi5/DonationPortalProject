@@ -1,0 +1,27 @@
+@* ViewBag.Organizations *@
+
+<p>Pledging to @ViewBag.Organizations.OrganizationName</p>
+
+<form action="/submitpledge/@ViewBag.Organizations.OrganizationId" method="post">
+    <div>
+        <p>Amount: $</p>
+        <textarea name="Amount" id="Amount" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <p>Pledge Year: </p>
+        <textarea name="PledgeYear" id="PledgeYear" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <button>
+            Submit
+        </button>
+</form>
+<form action="/home" method="get">
+    <button>
+        Cancel
+    </button>
+</form>
+
+</div>

@@ -1,0 +1,22 @@
+<p class="display-3"><strong>Title: @ViewBag.Organizations.OrganizationName</p>
+
+<div>
+    <img src="@ViewBag.Organizations.ImageUrl" alt="@ViewBag.Organizations.ImageUrl">
+    <p>Organization Description: @ViewBag.Organizations.OrganizationDescription</p>
+    <p>ZipCode of the Organization: @ViewBag.Organizations.ZipCode</p>
+    <p>Fundraiser Description: @ViewBag.Organizations.PostDescription</p>
+    <p>Goal of the Fundraiser: @ViewBag.Organizations.Goal</p>
+    <p>Amount Collected so far: @ViewBag.Organizations.AmountCollected</p>
+    <p>Contact the creator of the Fundraiser: @ViewBag.Organizations.Creator.Email</p>
+    <p>Fundraiser created at: @ViewBag.Organizations.CreatedAt</p>
+
+</div>
+
+<div>
+    <form action="/pledge/@ViewBag.Organizations.OrganizationId" method="get">
+        <button class="btn btn-success btn-lg">Donate</button>
+    </form>
+    <form action="/home" method="get">
+        <button class="btn btn-secondary btn-lg">Cancel</button>
+    </form>
+</div>
